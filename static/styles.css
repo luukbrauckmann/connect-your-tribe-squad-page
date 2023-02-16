@@ -135,9 +135,16 @@ main {
 
 .carousel {
 	list-style: none;
-	display: flex;
-	justify-content: center;
+	display: inline-flex;
+	width: 100%;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
 }
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
 
 .carousel__item,
 .carousel__item--active  {
@@ -148,7 +155,11 @@ main {
 	overflow: hidden;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	transform: scale(.5);
+	transform-origin: bottom;
 	opacity: .4;
+	flex: 1 0 100%;
+	scroll-snap-align: center;
+	scroll-snap-stop: always;
 }
 
 .carousel__item--active {
