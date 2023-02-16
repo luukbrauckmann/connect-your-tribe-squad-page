@@ -1,33 +1,62 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+<h1>
+  <img src="https://user-images.githubusercontent.com/47314813/218471748-d983dce9-0d2b-4220-9822-4167b0f43aac.png" style="height: 1em;">
+  <span>FDND Squad</span>
+</h1>
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
 
-## Inhoudsopgave
+<h2 id="inhoud">📦 Inhoud</h2>
 
-  * [Beschrijving](#beschrijving)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Gebruik](#gebruik)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
+<ol>
+  <li>
+    <a href="#beschrijving">Beschrijving</a>
+  </li>
+  <li>
+    <a href="#kenmerken">Kenmerken</a>
+  </li>
+  <li>
+    <a href="#installatie">Installatie</a>
+  </li>
+  <li>
+    <a href="#bronnen">Bronnen</a>
+  </li>
+  <li>
+    <a href="#licenties">Licenties</a>
+  </li>
+</ol>
 
-## Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
 
-## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+<h2 id="beschrijving">ℹ️ Beschrijving</h2>
 
-## Installatie
-<!-- Bij Installatie staat stap-voor-stap beschreven hoe je de development omgeving moet inrichten om aan de repository te kunnen werken. -->
+***
 
-## Gebruik
+<h2 id="kenmerken">✨ Kenmerken</h2>
 
-## Bronnen
+Hier een lijst met de tools & technieken.
 
-## Licentie
+Tools
+- Visual Studio Code (Code editor)
+- Polypane (Browser)
+
+Technieken
+- Express JS (Framework)
+- Embedded JavaScript Templating (Javascript Build Tool)
+- Font Awesome (Icons)
+- NPM (Package manager)
+- HTML (Markup)
+- CSS (Styling)
+- JavaScript (Interactivity)
+
+<h2 id="installatie">📥 Installatie</h2>
+
+***
+
+<h2 id="bronnen">🌍 Bronnen</h2>
+
+- [Express JS](https://expressjs.com/)
+- [Embedded JavaScript Templating](https://ejs.co/)
+- [Font Awesome](https://fontawesome.com/)
+
+<h2 id="licenties">🪪 Licenties</h2>
 
 ![GNU GPL V3](https://www.gnu.org/graphics/gplv3-127x51.png)
 
