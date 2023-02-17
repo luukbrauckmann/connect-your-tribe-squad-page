@@ -13,6 +13,8 @@
 	<script src="/icons/fontawesome.min.js" defer></script>
 	<script src="/icons/duotone.min.js" defer></script>
 	<script src="/icons/brands.min.js" defer></script>
+
+	<script type="module" src="/scripts/scroll-timeline.js" defer></script>
 </head>
 
 <body>
@@ -27,11 +29,13 @@
 				<ul class="carousel">
 					<% for(let member of locals.members) {%>
 						<li class="carousel__item">
-							<img class="carousel__item__image" src="<%- member.avatar %>" alt="">
-							<div class="carousel__item__content">
-								<h2><%- member.name %></h2>
-								<a href="<%- member.website %>" target="_blank">Naar visitekaartje <i class="fa-duotone fa-up-right-from-square"></i></a>
-							</div>
+							<article>
+								<img class="carousel__item__image" src="<%- member.avatar %>" alt="" loading="lazy">
+								<div class="carousel__item__content">
+									<h2><%- member.name %></h2>
+									<a href="<%- member.website %>" target="_blank">Naar visitekaartje <i class="fa-duotone fa-up-right-from-square"></i></a>
+								</div>
+							</article>
 						</li>
 					<% } %>
 				</ul>

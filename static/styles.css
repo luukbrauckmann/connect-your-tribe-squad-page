@@ -145,7 +145,6 @@ main {
 	list-style: none;
 	padding-inline: 1rem;
 	display: inline-flex;
-	gap: 1rem;
 	width: 100%;
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
@@ -155,18 +154,25 @@ main {
   display: none;
 }
 
+.carousel__item {
+	flex: 1 0 auto;
+	scroll-snap-align: center;
+	scroll-snap-stop: always;
+}
 
-.carousel__item,
-.carousel__item--active  {
-	max-width: 400px;
+.carousel__item article {
+	overflow: hidden;
 	background: var(--foreground);
 	backdrop-filter: var(--background-blur);
 	border-radius: 2rem;
-	overflow: hidden;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	flex: 1 0 100%;
-	scroll-snap-align: center;
-	scroll-snap-stop: always;
+	display: inline-block;
+}
+
+.carousel__item article img {
+	width: 300px;
+	height: 300px;
+	object-fit: cover;
 }
 
 .carousel__item__content {
