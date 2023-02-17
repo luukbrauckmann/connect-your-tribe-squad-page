@@ -7,7 +7,16 @@ app.set('views', './views')
 
 app.use(express.static('static'))
 
-app.get('/', async (_req, res) => res.render('index'))
+app.get('/', async (_req, res) => {
+	let members
+	const apiUrl = 'https://whois.fdnd.nl/api/v1/members'
+
+	await fetch(apiUrl)
+		.then((response) => response.json())
+		.then((data) => members = data.members)
+
+	res.render('index', { members })
+})
 
 
 // Stel het poortnummer in waar express op gaat luisteren
