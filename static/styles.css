@@ -67,7 +67,8 @@ body::after {
 	width: 100%;
 	height: 300px;
 	display: block;
-	position: absolute;
+	position: fixed;
+	z-index: 0;
 }
 
 body::before {
@@ -88,6 +89,8 @@ main {
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
+	z-index: 1;
+	position: relative;
 }
 
 .wrapper {
@@ -100,6 +103,10 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+}
+
+.wrapper--no-padding {
+	padding: 0;
 }
 
 .button {
@@ -125,6 +132,7 @@ main {
 
 .logo {
 	display: inline-block;
+	width: fit-content;
 	background-color: var(--background);
 	padding: .5rem 1rem;
 	border: 1px solid var(--secondary-color);
@@ -135,7 +143,9 @@ main {
 
 .carousel {
 	list-style: none;
+	padding-inline: 1rem;
 	display: inline-flex;
+	gap: 1rem;
 	width: 100%;
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
@@ -154,17 +164,9 @@ main {
 	border-radius: 2rem;
 	overflow: hidden;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	transform: scale(.5);
-	transform-origin: bottom;
-	opacity: .4;
 	flex: 1 0 100%;
 	scroll-snap-align: center;
 	scroll-snap-stop: always;
-}
-
-.carousel__item--active {
-	transform: scale(1);
-	opacity: 1;
 }
 
 .carousel__item__content {
