@@ -21,8 +21,6 @@ app.get('/', async (request, response) => {
 
 	const { members, membersConnection } = data
 
-	console.log(membersConnection);
-
 	response.render('index', { members, pages, activePage, membersConnection })
 })
 
