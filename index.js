@@ -9,7 +9,8 @@ app.use(express.static('static'))
 
 app.get('/', async (request, response) => {
 	let { page } = request.query
-	let activePage = +page ?? 0
+	if (!page) page = 0
+	let activePage = +page
 	console.log(activePage);
 	let pages = [0, 1, 2, 3, 4]
 
