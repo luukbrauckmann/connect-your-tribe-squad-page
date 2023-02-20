@@ -19,11 +19,11 @@ app.get('/', async (request, response) => {
 		.then((response) => response.json())
 		.then((data) => data)
 
-
 	const { members, membersConnection } = data
 
-	console.log(membersConnection)
-	response.render('index', { members, pages, activePage })
+	console.log(membersConnection);
+
+	response.render('index', { members, pages, activePage, membersConnection })
 })
 
 app.set('port', process.env.PORT || 8000)

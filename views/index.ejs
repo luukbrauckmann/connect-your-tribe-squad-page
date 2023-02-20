@@ -27,7 +27,7 @@
 		<main>
 			<div class="wrapper wrapper--no-padding">
 				<ul class="carousel">
-					<% for(let member of members) {%>
+					<% members.forEach((member, index) => { %>
 						<li class="carousel__item">
 							<article>
 								<header class="carousel__item__header">
@@ -41,13 +41,25 @@
 									<h2><%- member.name %></h2>
 									<a href="<%- member.website %>" target="_blank">Naar visitekaartje <i class="fa-duotone fa-up-right-from-square"></i></a>
 								</div>
+								<div class="carousel__item__navigators">
+									<button type="button" class="button" data-action="previous" data-disabled="<%- (index === 0) %>">
+										<i class="fa-duotone fa-chevron-left"></i>
+									</button>
+									<button type="button" class="button" data-action="next" data-disabled="<%- index === (members.length - 1) %>">
+										<i class="fa-duotone fa-chevron-right"></i>
+									</button>
+								</div>
 							</article>
+
 						</li>
-					<% } %>
+					<% }) %>
 				</ul>
 			</div>
 
-			<div class="navigators">
+		</main>
+
+		<footer>
+			<div class="wrapper navigators">
 				<a class="button navigators__button--arrow" href="/?page=<%= activePage - 1 %>">
 					<i class="fa-duotone fa-chevrons-left"></i>
 				</a>
@@ -60,7 +72,7 @@
 					<i class="fa-duotone fa-chevrons-right"></i>
 				</a>
 			</div>
-		</main>
+		</footer>
 </body>
 
 </html>

@@ -82,15 +82,22 @@ body::after {
 	background-image: url('images/layered-waves-bottom.svg');
 }
 
+body {
+	display: flex;
+	flex-flow: column;
+}
+
+body > header,
+body > footer {
+	flex: 0 1 auto;
+}
+
 main {
 	flex: 1 1 auto;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 1rem;
 	z-index: 1;
-	position: relative;
 }
 
 .wrapper {
@@ -98,10 +105,10 @@ main {
 	height: 100%;
 	margin-inline: auto;
 	padding: 1rem;
-	z-index: 1;
+	z-index: 2;
 	position: relative;
 	display: flex;
-	flex-direction: column;
+	align-items: center;
 	gap: 1rem;
 }
 
@@ -116,10 +123,20 @@ main {
 	border: 1px solid var(--foreground);
 	background: var(--foreground);
 	backdrop-filter: var(--background-blur);
+	box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 	display: inline-flex;
 	cursor: pointer;
 	text-decoration: none;
 	color: black;
+}
+
+.button * {
+	pointer-events: none;
+}
+
+.button[data-disabled="true"] {
+	pointer-events: none;
+	opacity: .4;
 }
 
 .button__text {
@@ -165,7 +182,7 @@ main {
 
 .carousel {
 	list-style: none;
-	padding-inline: 1rem;
+	padding-inline: 3rem;
 	display: inline-flex;
 	width: 100%;
 	overflow-x: auto;
@@ -182,6 +199,8 @@ main {
 	flex: 1 0 auto;
 	scroll-snap-align: center;
 	scroll-snap-stop: always;
+	position: relative;
+	margin-inline: 2rem;
 }
 
 .carousel__item:first-child {
@@ -192,13 +211,13 @@ main {
 }
 
 .carousel__item article {
-	overflow: hidden;
 	background: var(--foreground);
 	backdrop-filter: var(--background-blur);
-	border-radius: 2rem;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	display: inline-block;
 	width: 100%;
+	transform-origin: bottom;
+	border-radius: 2rem;
 }
 
 
@@ -220,6 +239,8 @@ main {
 	background-position: center;
   background-repeat: no-repeat;
 	background-size: 50%;
+	border-top-left-radius: 2rem;
+	border-top-right-radius: 2rem;
 }
 
 .carousel__item__content {
@@ -237,8 +258,30 @@ main {
 	text-decoration: underline;
 }
 
+.carousel__item__navigators {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.carousel__item__navigators button {
+	--foreground: rgba(255, 255, 255, .9);
+}
+
+.carousel__item__navigators button:first-child {
+	transform: translateX(-50%);
+}
+
+.carousel__item__navigators button:last-child {
+	transform: translateX(50%);
+}
+
 .navigators {
 	display: flex;
+	flex-flow: row nowrap;
 	justify-content: center;
 	align-items: center;
 	gap: .5rem;
