@@ -14,8 +14,8 @@ for (let $li of $lis) {
   );
   $li.querySelector('article').animate(
     {
-      transform: ['scale(0)', 'scale(.5)', 'scale(1) translatex(0)', 'scale(.5)', 'scale(0)'],
-      opacity: ['.2', '1', '.2'],
+      transform: ['scale(0)', 'scale(0)', 'scale(1)', 'scale(0)', 'scale(0)'],
+      opacity: ['0', '.5', '1', '.5', '0']
     },
     { timeline: viewTimeline, fill: 'both' }
   );

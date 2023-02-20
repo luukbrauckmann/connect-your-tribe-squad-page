@@ -7,23 +7,24 @@ app.set('views', './views')
 
 app.use(express.static('static'))
 
-app.get('/', async (_req, res) => {
-	let members
-	const apiUrl = 'https://whois.fdnd.nl/api/v1/members'
+app.get('/', async (request, response) => {
+	let { page } = request.query
+	let activePage = +page ?? 0
+	console.log(activePage);
+	let pages = [0, 1, 2, 3, 4]
 
-	await fetch(apiUrl)
+	const apiUrl = `https://whois.fdnd.nl/api/v1/members?first=20&skip=${ 20 * (page ?? 0) }`
+	const data = await fetch(apiUrl)
 		.then((response) => response.json())
-		.then((data) => members = data.members)
+		.then((data) => data)
 
-	res.render('index', { members })
+
+	const { members, membersConnection } = data
+
+	console.log(membersConnection)
+	response.render('index', { members, pages, activePage })
 })
 
-
-// Stel het poortnummer in waar express op gaat luisteren
 app.set('port', process.env.PORT || 8000)
 
-// Start express op, haal het ingestelde poortnummer op
-app.listen(app.get('port'), function () {
-  // Toon een bericht in de console en geef het poortnummer door
-  console.log(`Application started on http://localhost:${app.get('port')}`)
-})
+app.listen(app.get('port'), () => console.log(`Application started on http://localhost:${app.get('port')}`))

@@ -117,6 +117,15 @@ main {
 	background: var(--foreground);
 	backdrop-filter: var(--background-blur);
 	display: inline-flex;
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+}
+
+.button__text {
+	line-height: 1;
+	min-width: 2rem;
+	text-align: center;
 }
 
 .svg-inline--fa {
@@ -128,6 +137,19 @@ main {
 	display: flex;
 	justify-content: space-between;
 	max-width: 400px;
+}
+
+.shout {
+	font-size: 1.25rem;
+	background: var(--background);
+	color: #FFFFFF;
+	padding: .5rem 1rem;
+	border-radius: 2rem;
+}
+
+.shout__icon {
+	--icon-color: #FFFFFF;
+	color: var(--icon-color);
 }
 
 .logo {
@@ -155,9 +177,18 @@ main {
 }
 
 .carousel__item {
+	width: 100%;
+	max-width: 400px;
 	flex: 1 0 auto;
 	scroll-snap-align: center;
 	scroll-snap-stop: always;
+}
+
+.carousel__item:first-child {
+	margin-left: 50%;
+}
+.carousel__item:last-child {
+	margin-right: 50%;
 }
 
 .carousel__item article {
@@ -167,12 +198,28 @@ main {
 	border-radius: 2rem;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	display: inline-block;
+	width: 100%;
 }
 
-.carousel__item article img {
-	width: 300px;
-	height: 300px;
+
+.carousel__item__header {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	padding: 1rem;
+}
+
+.carousel__item__image {
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 1 / 1;
 	object-fit: cover;
+	background-image: url('images/user-duotone.svg');
+	background-position: center;
+  background-repeat: no-repeat;
+	background-size: 50%;
 }
 
 .carousel__item__content {
@@ -190,6 +237,24 @@ main {
 	text-decoration: underline;
 }
 
+.navigators {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: .5rem;
+	width: 100%;
+	overflow: hidden;
+}
+
+.navigators__button--page {
+	display: none;
+}
+.navigators__button--page[data-activepage=true] {
+	display: inline-flex;
+	background: var(--background);
+	color: white;
+}
+
 /* Media queries */
 @media (min-width: 36rem) {
 	:root {
@@ -200,6 +265,10 @@ main {
 @media (min-width: 48rem) {
 	:root {
 		--content-width: var(--breakpoint-md);
+	}
+
+	.navigators__button--page {
+		display: inline-flex;
 	}
 }
 

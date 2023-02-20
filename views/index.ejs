@@ -27,9 +27,15 @@
 		<main>
 			<div class="wrapper wrapper--no-padding">
 				<ul class="carousel">
-					<% for(let member of locals.members) {%>
+					<% for(let member of members) {%>
 						<li class="carousel__item">
 							<article>
+								<header class="carousel__item__header">
+									<span class="shout">
+										<span class="shout__text"><%- member.shouts?.length ?? '0' %></span>
+										<i style="--icon-color: <%- member.colour?.hex ?? '#FFF' %>;" class="shout__icon fa-duotone fa-thumbs-up"></i>
+									</span>
+								</header>
 								<img class="carousel__item__image" src="<%- member.avatar %>" alt="" loading="lazy">
 								<div class="carousel__item__content">
 									<h2><%- member.name %></h2>
@@ -41,13 +47,18 @@
 				</ul>
 			</div>
 
-			<div>
-				<button class="button">
-					<i class="fa-duotone fa-chevron-left"></i>
-				</button>
-				<button class="button">
-					<i class="fa-duotone fa-chevron-right"></i>
-				</button>
+			<div class="navigators">
+				<a class="button navigators__button--arrow" href="/?page=<%= activePage - 1 %>">
+					<i class="fa-duotone fa-chevrons-left"></i>
+				</a>
+				<% for(let page of pages) { %>
+					<a class="button navigators__button--page" data-activepage="<%- page === activePage %>" href="/?page=<%- page %>">
+						<span class="button__text"><%- page %></span>
+					</a>
+				<% } %>
+				<a class="button navigators__button--arrow" href="/?page=<%= activePage + 1 %>">
+					<i class="fa-duotone fa-chevrons-right"></i>
+				</a>
 			</div>
 		</main>
 </body>
