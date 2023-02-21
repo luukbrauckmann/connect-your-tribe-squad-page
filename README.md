@@ -1,6 +1,6 @@
 <h1>
   <img src="https://user-images.githubusercontent.com/47314813/218471748-d983dce9-0d2b-4220-9822-4167b0f43aac.png" style="height: 1em;">
-  <span>FDND Squad</span>
+  <span>FDND Squadpage</span>
 </h1>
 
 
